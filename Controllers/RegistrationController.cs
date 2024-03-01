@@ -68,6 +68,8 @@ namespace EventPlanner.Controllers
 
             var reg = rs.GetParticipants(EventID).Find(x => x.RegistrationID == RegistrationID);
 
+            ViewBag.EventID = EventID;
+
             return View(reg);
         }
 
@@ -84,7 +86,13 @@ namespace EventPlanner.Controllers
             {
                 ViewBag.Message = "Participant information is updated successfully";
             }
-            return View();
+            else
+            {
+                ViewBag.Message = "Error updating participant information";
+                return View(reg);
+            }
+            return View(reg);
+            //return RedirectToAction("Index", new { EventID = reg.EventID });
         }
 
         public ActionResult DeleteRegistration(int RegistrationID)

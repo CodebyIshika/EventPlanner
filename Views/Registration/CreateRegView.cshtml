@@ -4,7 +4,7 @@
     ViewBag.Title = "CreateRegView";
 }
 
-<h2>CreateRegView</h2>
+<h2>New Registration For the Event</h2>
 
 
 @using (Html.BeginForm()) 
@@ -73,7 +73,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index", new { EventID = ViewBag.EventID })
+    @Html.ActionLink("Back to Events", "Index", "Event")
 </div>
 
 @section Scripts {

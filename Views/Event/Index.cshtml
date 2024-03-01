@@ -4,13 +4,13 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Event Planner</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateEventView")
+    @Html.ActionLink("Add New Event", "CreateEventView")
 </p>
 <p>
-    @Html.ActionLink("Create New Registration", "CreateRegView", "Registration")
+    @Html.ActionLink("Add New Registration", "CreateRegView", "Registration")
 </p>
 <table class="table">
     <tr>
@@ -58,3 +58,9 @@
 }
 
 </table>
+
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10" style="color:green">
+        @ViewBag.Message
+    </div>
+</div>
