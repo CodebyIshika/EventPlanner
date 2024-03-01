@@ -1,0 +1,58 @@
+﻿@model IEnumerable<EPEntities.Registration>
+
+@{
+    ViewBag.Title = "Registrations for Event " + ViewBag.EventID;
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New Registration", "CreateRegView", new { EventID = ViewBag.EventID })
+
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RegistrationDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RegistrationDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditRegView", new { EventID = item.EventID, RegistrationID = item.RegistrationID }) |
+            @*@Html.ActionLink("Details", "Index", new { RegistrationID = item.RegistrationID }, null) |*@
+            @Html.ActionLink("Delete", "DeleteRegistration", new { RegistrationID = item.RegistrationID })
+        </td>
+    </tr>
+}
+
+</table>
