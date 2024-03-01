@@ -18,10 +18,7 @@ namespace EventPlanner.Controllers
             RegService rs = new RegService();
             var reg = rs.GetParticipants(EventID);
             return View(reg);
-            //RegService rs = new RegService();
-            //var reg = rs.GetParticipants(EventID);
-
-            //return View(reg);
+            
         }
 
         public ActionResult CreateRegView()
@@ -91,8 +88,9 @@ namespace EventPlanner.Controllers
                 ViewBag.Message = "Error updating participant information";
                 return View(reg);
             }
-            return View(reg);
-            //return RedirectToAction("Index", new { EventID = reg.EventID });
+            // return View(reg);
+            
+            return RedirectToAction("Index", new { EventID = reg.EventID });
         }
 
         public ActionResult DeleteRegistration(int RegistrationID)
